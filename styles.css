@@ -1,3 +1,5 @@
+/* GOOGLE FONT */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
 
 /* RESET */
 * {
@@ -8,33 +10,34 @@
 
 /* BODY */
 body {
-  font-family: 'Segoe UI', Arial, sans-serif;
-  background: #f4f6f8;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #dfe9f3, #ffffff);
   color: #333;
-  line-height: 1.6;
 }
 
-/* CONTAINER */
+/* MAIN CONTAINER */
 .container {
   max-width: 900px;
-  margin: 40px auto;
-  background: #fff;
+  margin: 50px auto;
+  background: #ffffff;
   padding: 40px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  border-radius: 10px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  animation: fadeIn 1s ease-in-out;
 }
 
 /* HEADER */
 .header {
   text-align: center;
-  border-bottom: 2px solid #2c3e50;
   padding-bottom: 15px;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
+  border-bottom: 2px solid #eee;
 }
 
 .header h1 {
-  font-size: 28px;
+  font-size: 32px;
   color: #2c3e50;
+  letter-spacing: 1px;
 }
 
 .header p {
@@ -44,63 +47,101 @@ body {
 
 /* SECTION */
 .section {
-  margin-top: 25px;
+  margin-top: 30px;
+  transition: 0.3s;
 }
 
+.section:hover {
+  transform: translateY(-3px);
+}
+
+/* SECTION TITLE */
 .section h2 {
   font-size: 20px;
-  border-bottom: 1px solid #ccc;
-  padding-bottom: 5px;
-  margin-bottom: 10px;
-  color: #2c3e50;
+  color: #3498db;
+  position: relative;
+  margin-bottom: 15px;
 }
 
-/* ROW ALIGNMENT */
+/* underline animation */
+.section h2::after {
+  content: '';
+  width: 40px;
+  height: 3px;
+  background: #3498db;
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  transition: 0.4s;
+}
+
+.section:hover h2::after {
+  width: 80px;
+}
+
+/* ROW */
 .row {
   display: flex;
   justify-content: space-between;
-  font-weight: bold;
+  font-weight: 600;
   margin-top: 10px;
 }
 
 /* TEXT */
 p {
   margin: 8px 0;
+  font-size: 14px;
 }
 
 /* LIST */
 ul {
   padding-left: 20px;
-  margin-top: 5px;
 }
 
 li {
-  margin-bottom: 5px;
+  margin-bottom: 6px;
+  font-size: 14px;
 }
 
-/* LINKS (Portfolio buttons) */
+/* BUTTON LINKS */
 a {
   display: inline-block;
-  margin: 10px 5px;
-  padding: 10px 15px;
-  background: #3498db;
+  margin: 10px 8px;
+  padding: 10px 18px;
+  background: linear-gradient(45deg, #3498db, #6dd5fa);
   color: white;
   text-decoration: none;
-  border-radius: 5px;
+  border-radius: 25px;
+  font-size: 14px;
   transition: 0.3s;
 }
 
 a:hover {
-  background: #2980b9;
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
 
-/* COVER LETTER */
+/* COVER LETTER CONTENT */
 .content {
-  margin-top: 15px;
+  margin-top: 20px;
+  text-align: justify;
 }
 
+/* FOOTER */
 .footer {
   margin-top: 30px;
+}
+
+/* ANIMATION */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* RESPONSIVE */
@@ -115,7 +156,7 @@ a:hover {
   }
 }
 
-/* PRINT (FOR PDF) */
+/* PRINT (PDF CLEAN) */
 @media print {
   body {
     background: white;
@@ -123,11 +164,11 @@ a:hover {
 
   .container {
     box-shadow: none;
-    margin: 0;
     border-radius: 0;
+    margin: 0;
   }
 
   a {
-    display: none; /* hide buttons in print */
+    display: none;
   }
 }
