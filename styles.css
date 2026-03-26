@@ -1,1 +1,133 @@
 
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* BODY */
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: #f4f6f8;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* CONTAINER */
+.container {
+  max-width: 900px;
+  margin: 40px auto;
+  background: #fff;
+  padding: 40px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  border-radius: 10px;
+}
+
+/* HEADER */
+.header {
+  text-align: center;
+  border-bottom: 2px solid #2c3e50;
+  padding-bottom: 15px;
+  margin-bottom: 20px;
+}
+
+.header h1 {
+  font-size: 28px;
+  color: #2c3e50;
+}
+
+.header p {
+  color: #777;
+  margin-top: 5px;
+}
+
+/* SECTION */
+.section {
+  margin-top: 25px;
+}
+
+.section h2 {
+  font-size: 20px;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 5px;
+  margin-bottom: 10px;
+  color: #2c3e50;
+}
+
+/* ROW ALIGNMENT */
+.row {
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+/* TEXT */
+p {
+  margin: 8px 0;
+}
+
+/* LIST */
+ul {
+  padding-left: 20px;
+  margin-top: 5px;
+}
+
+li {
+  margin-bottom: 5px;
+}
+
+/* LINKS (Portfolio buttons) */
+a {
+  display: inline-block;
+  margin: 10px 5px;
+  padding: 10px 15px;
+  background: #3498db;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+
+a:hover {
+  background: #2980b9;
+}
+
+/* COVER LETTER */
+.content {
+  margin-top: 15px;
+}
+
+.footer {
+  margin-top: 30px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 600px) {
+  .container {
+    padding: 20px;
+  }
+
+  .row {
+    flex-direction: column;
+    gap: 5px;
+  }
+}
+
+/* PRINT (FOR PDF) */
+@media print {
+  body {
+    background: white;
+  }
+
+  .container {
+    box-shadow: none;
+    margin: 0;
+    border-radius: 0;
+  }
+
+  a {
+    display: none; /* hide buttons in print */
+  }
+}
